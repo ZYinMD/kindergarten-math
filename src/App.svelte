@@ -1,12 +1,10 @@
 <script lang="ts">
-  import Counter from "./lib/Counter.svelte";
+  import QuizSettings from './lib/QuizSettings/QuizSettings.svelte';
 </script>
 
 <main>
-  <h1>Vite + Svelte</h1>
-
-  <div class="card">
-    <Counter />
+  <div>
+    <QuizSettings />
   </div>
 </main>
 
