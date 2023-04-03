@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { currentView } from '../viewStore';
   import { defaultQuestionTypes, settings } from './settingsStore';
 </script>
 
@@ -31,6 +32,16 @@
   store value:
   <pre>{JSON.stringify($settings, null, 2)}</pre>
 </div>
+
+<section>
+  <button
+    on:click={() => {
+      currentView.set('questions');
+    }}
+  >
+    开始
+  </button>
+</section>
 
 <style>
   .question-types {
