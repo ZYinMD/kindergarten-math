@@ -1,15 +1,40 @@
 <script lang="ts">
-  console.log('\x1b[35m', 'hello world', '\x1b[0m');
-  let maxAllowed = 10;
+  import { defaultQuestionTypes, settings } from './settingsStore';
 </script>
 
-<div>
-  最大数值不超过: {maxAllowed}
+<section>
+  最大数值不超过: {$settings.maxNumberAllowed}
 
   <label>
-    <input type="range" bind:value={maxAllowed} min="5" max="20" />
+    <input type="range" bind:value={$settings.maxNumberAllowed} min="5" max="20" />
   </label>
+</section>
+
+<section>
+  题目数量: {$settings.numQuestions}
+  <label>
+    <input type="range" bind:value={$settings.numQuestions} min="5" max="25" />
+  </label>
+</section>
+
+<section class="question-types">
+  包含题型:
+
+  {#each Object.keys(defaultQuestionTypes) as key (key)}
+    <label>
+      <input type="checkbox" bind:checked={$settings.questionTypes[key]} />
+      {key}
+    </label>
+  {/each}
+</section>
+<div>
+  store value:
+  <pre>{JSON.stringify($settings, null, 2)}</pre>
 </div>
 
 <style>
+  .question-types {
+    display: flex;
+    flex-direction: column;
+  }
 </style>

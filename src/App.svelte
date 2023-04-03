@@ -3,6 +3,3 @@
 </script>
 
 <QuizSettings />
-
-<style>
-</style>
