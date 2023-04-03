@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { currentView } from '../stores/currentView';
-  import { defaultQuestionTypes, settings } from './settingsStore';
+  import { currentView } from '../stores/$currentView';
+  import { defaultQuestionTypes, settings } from '../stores/$settings';
 </script>
 
 <section>
