@@ -2,11 +2,7 @@
   import QuizSettings from './lib/QuizSettings/QuizSettings.svelte';
 </script>
 
-<main>
-  <div>
-    <QuizSettings />
-  </div>
-</main>
+<QuizSettings />
 
 <style>
 </style>
