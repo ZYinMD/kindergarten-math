@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { currentView } from '../viewStore';
+  import { currentView } from '../stores/currentView';
   import { defaultQuestionTypes, settings } from './settingsStore';
 </script>
 
