@@ -4,22 +4,22 @@
   $: type = $currentQuestion.type;
 </script>
 
-{#if type === '1+2=_'}
+{#if type === 'a+b=_'}
   <div>{a} + {b} = _</div>
 {/if}
-{#if type === '1+_=3'}
+{#if type === 'a+_=b'}
   <div>{a} + _ = {c}</div>
 {/if}
-{#if type === '_+2=3'}
+{#if type === '_+b=c'}
   <div>_ + {b} = {c}</div>
 {/if}
-{#if type === '3-2=_'}
+{#if type === 'c-b=_'}
   <div>{c} - {b} = _</div>
 {/if}
-{#if type === '3-_=1'}
+{#if type === 'c-_=a'}
   <div>{c} - _ = {a}</div>
 {/if}
-{#if type === '_-2=1'}
+{#if type === '_-b=a'}
   <div>_ - {b} = {a}</div>
 {/if}
 
