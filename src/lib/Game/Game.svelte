@@ -6,7 +6,7 @@
 
 <button
   on:click={() => {
-    currentView.set('questionSettings');
+    currentView.set('gameSettings');
   }}>new</button
 >
 
