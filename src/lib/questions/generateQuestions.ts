@@ -1,7 +1,8 @@
 import { test, expect } from 'vitest';
+import type { defaultSettings } from '../stores/$settings';
 
 export function getAllAddends(sum: number) {
-  const addends = [];
+  const addends: number[] = [];
   for (let i = 1; i < sum; i++) {
     addends.push(i);
   }
@@ -35,7 +36,7 @@ if (import.meta.vitest) {
 }
 
 export function getAllPermutations(maxSum: number) {
-  const permutations = [];
+  const permutations: number[][] = [];
   for (let sum = 2; sum <= maxSum; sum++) {
     const triplets = getAllTriplets(sum);
     permutations.push(...triplets);
@@ -58,4 +59,23 @@ if (import.meta.vitest) {
       [4, 1, 5],
     ]);
   });
+}
+
+export function* generateQuestion(settings: typeof defaultSettings) {
+  const { maxNumberAllowed, questionTypes } = settings;
+  let questionPool: number[][] = [];
+  while (true) {
+    if (questionPool.length === 0) {
+      questionPool = getAllPermutations(maxNumberAllowed);
+    }
+    let randomIndex = Math.floor(Math.random() * questionPool.length);
+    const randomQuestion = questionPool[randomIndex];
+    const questionTypesAllowed = Object.entries(questionTypes)
+      .filter(([key, value]) => Boolean(value))
+      .map(([key, value]) => key);
+    randomIndex = Math.floor(Math.random() * questionTypesAllowed.length);
+    const randomQuestionType = questionTypesAllowed[randomIndex];
+    yield { question: randomQuestion, questionType: randomQuestionType };
+    questionPool.splice(randomIndex, 1);
+  }
 }

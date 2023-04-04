@@ -9,8 +9,10 @@ export const defaultQuestionTypes = {
   '_-2=1': false,
 };
 
-export const settings = writable({
+export const defaultSettings = {
   numQuestions: 10,
   maxNumberAllowed: 10,
   questionTypes: defaultQuestionTypes,
-});
+};
+
+export const settings = writable(defaultSettings);
