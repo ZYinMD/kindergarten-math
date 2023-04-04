@@ -15,4 +15,10 @@ export const defaultSettings = {
   questionTypes: defaultQuestionTypes,
 };
 
-export const settings = writable(defaultSettings);
+const initialSettings = JSON.parse(localStorage.getItem('settings_v1')) || defaultSettings;
+
+export const settings = writable(initialSettings);
+
+settings.subscribe((value) => {
+  localStorage.setItem('settings_v1', JSON.stringify(value));
+});
