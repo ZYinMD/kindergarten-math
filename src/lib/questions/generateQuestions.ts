@@ -26,11 +26,11 @@ export function getAllPermutations(maxSum: number) {
 }
 
 export function* generateQuestion(settings: typeof defaultSettings) {
-  const { maxNumberAllowed, questionTypes } = settings;
+  const { maxValueAllowed, questionTypes } = settings;
   let questionPool: number[][] = [];
   while (true) {
     if (questionPool.length === 0) {
-      questionPool = getAllPermutations(maxNumberAllowed);
+      questionPool = getAllPermutations(maxValueAllowed);
     }
     let randomIndex = Math.floor(Math.random() * questionPool.length);
     const randomQuestion = questionPool[randomIndex];

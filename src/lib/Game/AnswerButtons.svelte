@@ -1,7 +1,7 @@
 <script lang="ts">
   import { settings } from '../GameSettings/$settings';
 
-  $: numButtons = Math.ceil($settings.maxNumberAllowed / 10) * 10;
+  $: numButtons = Math.ceil($settings.maxValueAllowed / 10) * 10;
   $: buttonArray = Array(numButtons)
     .fill(null)
     .map((item, index) => index + 1);

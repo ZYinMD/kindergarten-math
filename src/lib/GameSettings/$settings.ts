@@ -11,7 +11,7 @@ export const defaultQuestionTypes = {
 
 export const defaultSettings = {
   numQuestions: 10,
-  maxNumberAllowed: 10,
+  maxValueAllowed: 10,
   questionTypes: defaultQuestionTypes,
 };
 

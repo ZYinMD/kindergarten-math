@@ -5,10 +5,10 @@
 </script>
 
 <section>
-  最大数值不超过: {$settings.maxNumberAllowed}
+  最大数值不超过: {$settings.maxValueAllowed}
 
   <label>
-    <input type="range" bind:value={$settings.maxNumberAllowed} min="5" max="20" />
+    <input type="range" bind:value={$settings.maxValueAllowed} min="5" max="20" />
   </label>
 </section>
 
