@@ -26,9 +26,9 @@
   .self {
     display: grid;
     grid:
-      'score new-button' 100px
-      'question question' 300px
-      'answer-buttons answer-buttons' 300px
+      'score new-button' 40px
+      'question question' 100px
+      'answer-buttons answer-buttons' 200px
       /
       auto auto;
   }

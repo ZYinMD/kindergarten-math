@@ -28,5 +28,6 @@
 <style>
   .self {
     grid-area: question;
+    place-self: center;
   }
 </style>

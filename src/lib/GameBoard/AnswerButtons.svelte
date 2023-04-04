@@ -44,10 +44,18 @@
 <style>
   .self {
     grid-area: answer-buttons;
+    place-self: center;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
   }
   button {
-    width: 50px;
-    height: 50px;
-    margin: 5px;
+    width: 7vw;
+    height: 7vw;
+    margin: 1vw;
+    background-color: LightGreen;
+    font-size: 2.5vw;
+    color: #0008;
+    border: none;
+    border-radius: 5px;
   }
 </style>
