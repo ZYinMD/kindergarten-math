@@ -1,6 +1,6 @@
 <script lang="ts">
   import { settings } from '../GameSettings/$settings';
-  import { currentQuestion } from '../questions/$progress';
+  import { correctCounter, currentQuestion, questionUtil } from '../questions/$progress';
 
   $: numButtons = Math.ceil($settings.maxValueAllowed / 10) * 10;
   $: buttonArray = Array(numButtons)
@@ -18,10 +18,14 @@
         if (type[2] === '_') answer = question[1];
         if (type[4] === '_') answer = question[2];
         if (buttonNumber === answer) {
-          console.log('correct');
+          correctCounter.update((prev) => prev + 1);
         } else {
-          console.log('wrong');
+          correctCounter.update((prev) => {
+            if (prev > 0) return prev - 1;
+            return prev;
+          });
         }
+        questionUtil.next();
       }}
     >
       {buttonNumber}
