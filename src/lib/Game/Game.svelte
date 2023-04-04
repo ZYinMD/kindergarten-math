@@ -1,6 +1,7 @@
 <script lang="ts">
   import { currentView } from '../../$app';
   import { currentQuestion, questionUtil } from '../questions/$progress';
+  import AnswerButtons from './AnswerButtons.svelte';
   import Question from './Question.svelte';
 </script>
 
@@ -21,7 +22,8 @@
   >
 {/if}
 
-<div>{JSON.stringify($currentQuestion)}</div>
+<AnswerButtons />
+<div>currentQuestion:{JSON.stringify($currentQuestion)}</div>
 
 <style>
 </style>
