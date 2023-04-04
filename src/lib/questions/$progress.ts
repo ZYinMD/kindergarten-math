@@ -9,8 +9,8 @@ on submit a question:
  */
 
 import { get, writable } from 'svelte/store';
-import { generateQuestion } from '../questions/generateQuestions';
-import { settings, type defaultQuestionTypes } from './$settings';
+import { settings, type defaultQuestionTypes } from '../GameSettings/$settings';
+import { generateQuestion } from './generateQuestions';
 
 export const questionUtil = {
   generator: null as null | ReturnType<typeof generateQuestion>,

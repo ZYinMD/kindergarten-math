@@ -1,4 +1,4 @@
-import type { defaultSettings } from '../stores/$settings';
+import type { defaultSettings } from '../GameSettings/$settings';
 
 export function getAllAddends(sum: number) {
   const addends: number[] = [];

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { currentQuestion } from '../stores/$progress';
+  import { currentQuestion } from '../questions/$progress';
   $: [a, b, c] = $currentQuestion.question;
   $: type = $currentQuestion.type;
 </script>

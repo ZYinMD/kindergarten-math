@@ -1,7 +1,7 @@
 <script lang="ts">
   import { currentView } from '../stores/$currentView';
-  import { questionUtil } from '../stores/$progress';
-  import { defaultQuestionTypes, settings } from '../stores/$settings';
+  import { questionUtil } from '../questions/$progress';
+  import { defaultQuestionTypes, settings } from './$settings';
 </script>
 
 <section>
