@@ -1,13 +1,13 @@
 <script lang="ts">
-  import QuestionSettings from './lib/QuestionSettings/QuestionSettings.svelte';
-  import QuestionView from './lib/QuestionView/QuestionView.svelte';
+  import GameSettings from './lib/GameSettings/GameSettings.svelte';
+  import Game from './lib/Game/Game.svelte';
   import { currentView } from './lib/stores/$currentView';
 </script>
 
 {#if $currentView === 'questionSettings'}
-  <QuestionSettings />
+  <GameSettings />
 {/if}
 
 {#if $currentView === 'questions'}
-  <QuestionView />
+  <Game />
 {/if}
