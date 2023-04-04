@@ -29,7 +29,7 @@
   }
 </script>
 
-<section>
+<div class="self">
   {#each buttonArray as buttonNumber (buttonNumber)}
     <button
       on:click={() => {
@@ -39,7 +39,15 @@
       {buttonNumber}
     </button>
   {/each}
-</section>
+</div>
 
 <style>
+  .self {
+    grid-area: answer-buttons;
+  }
+  button {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+  }
 </style>

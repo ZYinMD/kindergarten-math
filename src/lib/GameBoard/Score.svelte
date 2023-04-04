@@ -3,7 +3,12 @@
   import { correctCounter } from '../questions/$progress';
 </script>
 
-<div>Score: {$correctCounter} / {$settings.numQuestions}</div>
+<div class="self">
+  Score: {$correctCounter} / {$settings.numQuestions}
+</div>
 
 <style>
+  .self {
+    grid-area: score;
+  }
 </style>
