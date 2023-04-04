@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Game from './lib/Game/Game.svelte';
+  import GameBoard from './lib/GameBoard/GameBoard.svelte';
   import Settings from './lib/GameSettings/Settings.svelte';
   import { currentView } from './$app';
 </script>
@@ -9,5 +9,5 @@
 {/if}
 
 {#if $currentView === 'questions'}
-  <Game />
+  <GameBoard />
 {/if}
