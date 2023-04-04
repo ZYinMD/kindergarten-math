@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { currentView } from '../stores/$currentView';
+  import { currentView } from '../../$app';
   import { currentQuestion, questionUtil } from '../questions/$progress';
   import Question from './Question.svelte';
 </script>

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { currentView } from '../stores/$currentView';
+  import { currentView } from '../../$app';
   import { questionUtil } from '../questions/$progress';
   import { defaultQuestionTypes, settings } from './$settings';
 </script>
