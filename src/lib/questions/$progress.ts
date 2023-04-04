@@ -12,9 +12,12 @@ import { get, writable } from 'svelte/store';
 import { settings, type defaultQuestionTypes } from '../GameSettings/$settings';
 import { generateQuestion } from './generateQuestions';
 
+export const correctCounter = writable(0);
+
 export const questionUtil = {
   generator: null as null | ReturnType<typeof generateQuestion>,
   newGame() {
+    correctCounter.set(0);
     const gameSettings = get(settings);
     this.generator = generateQuestion(gameSettings);
     this.next();
@@ -28,5 +31,3 @@ export const currentQuestion = writable<{
   question: [number, number, number];
   type: keyof typeof defaultQuestionTypes;
 } | null>(null);
-
-export const correctCounter = writable(0);

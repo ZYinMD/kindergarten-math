@@ -15,6 +15,10 @@
     if (type[4] === '_') answer = question[2];
     if (buttonNumber === answer) {
       correctCounter.update((prev) => prev + 1);
+      if ($correctCounter >= $settings.numQuestions) {
+        console.log('won!');
+        return;
+      }
     } else {
       correctCounter.update((prev) => {
         if (prev > 0) return prev - 1;
