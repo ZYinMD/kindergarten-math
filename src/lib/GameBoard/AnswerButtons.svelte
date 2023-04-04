@@ -10,9 +10,9 @@
   function handleClickAnswerButton(buttonNumber: number) {
     const { question, type } = $currentQuestion;
     let answer = 0;
-    if (type[0] === '_') answer = question[0];
-    if (type[2] === '_') answer = question[1];
-    if (type[4] === '_') answer = question[2];
+    if (!type.includes('a')) answer = question[0];
+    if (!type.includes('b')) answer = question[1];
+    if (!type.includes('c')) answer = question[2];
     if (buttonNumber === answer) {
       correctCounter.update((prev) => prev + 1);
       if ($correctCounter >= $settings.numQuestions) {

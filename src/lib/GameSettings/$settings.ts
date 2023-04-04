@@ -2,7 +2,7 @@ import { writable } from 'svelte/store';
 
 export const defaultQuestionTypes = {
   'a+b=_': true,
-  'a+_=b': false,
+  'a+_=c': false,
   '_+b=c': false,
   'c-b=_': false,
   'c-_=a': false,

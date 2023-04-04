@@ -7,7 +7,7 @@
 {#if type === 'a+b=_'}
   <div>{a} + {b} = _</div>
 {/if}
-{#if type === 'a+_=b'}
+{#if type === 'a+_=c'}
   <div>{a} + _ = {c}</div>
 {/if}
 {#if type === '_+b=c'}
