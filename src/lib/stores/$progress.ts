@@ -8,6 +8,23 @@ on submit a question:
 
  */
 
-import { writable } from 'svelte/store';
+import { get, writable } from 'svelte/store';
+import { generateQuestion } from '../questions/generateQuestions';
+import { settings, type defaultQuestionTypes } from './$settings';
 
-export const $currentQuestion = writable('');
+export const questionUtil = {
+  generator: null as null | ReturnType<typeof generateQuestion>,
+  newGame() {
+    const gameSettings = get(settings);
+    this.generator = generateQuestion(gameSettings);
+    this.next();
+  },
+  next() {
+    currentQuestion.set(this.generator.next().value);
+  },
+};
+
+export const currentQuestion = writable<{
+  question: [number, number, number];
+  type: keyof typeof defaultQuestionTypes;
+} | null>(null);

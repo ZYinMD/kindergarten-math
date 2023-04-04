@@ -1,7 +1,27 @@
 <script lang="ts">
+  import { currentView } from '../stores/$currentView';
+  import { currentQuestion, questionUtil } from '../stores/$progress';
+  import Question from './Question.svelte';
 </script>
 
-<div>QuestionView</div>
+<button
+  on:click={() => {
+    currentView.set('questionSettings');
+  }}>new</button
+>
+
+{#if !$currentQuestion}
+  <div>nothing to display, shouldn't happen</div>
+{:else}
+  <Question />
+  <button
+    on:click={() => {
+      questionUtil.next();
+    }}>next</button
+  >
+{/if}
+
+<div>{JSON.stringify($currentQuestion)}</div>
 
 <style>
 </style>

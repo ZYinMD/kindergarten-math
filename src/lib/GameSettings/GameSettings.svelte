@@ -1,5 +1,6 @@
 <script lang="ts">
   import { currentView } from '../stores/$currentView';
+  import { questionUtil } from '../stores/$progress';
   import { defaultQuestionTypes, settings } from '../stores/$settings';
 </script>
 
@@ -36,6 +37,7 @@
 <section>
   <button
     on:click={() => {
+      questionUtil.newGame();
       currentView.set('questions');
     }}
   >
