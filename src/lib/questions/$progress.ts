@@ -31,3 +31,7 @@ export const currentQuestion = writable<{
   question: [number, number, number];
   type: keyof typeof defaultQuestionTypes;
 } | null>(null);
+
+currentQuestion.subscribe((value) => {
+  console.debug('current question:', JSON.stringify(value));
+});
