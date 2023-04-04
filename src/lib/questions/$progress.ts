@@ -28,3 +28,5 @@ export const currentQuestion = writable<{
   question: [number, number, number];
   type: keyof typeof defaultQuestionTypes;
 } | null>(null);
+
+export const correctCounter = writable(0);

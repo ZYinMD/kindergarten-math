@@ -3,6 +3,7 @@
   import { currentQuestion, questionUtil } from '../questions/$progress';
   import AnswerButtons from './AnswerButtons.svelte';
   import Question from './Question.svelte';
+  import Score from './Score.svelte';
 </script>
 
 <button
@@ -11,6 +12,7 @@
   }}>new</button
 >
 
+<Score />
 {#if !$currentQuestion}
   <div>nothing to display, shouldn't happen</div>
 {:else}
