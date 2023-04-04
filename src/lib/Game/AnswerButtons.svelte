@@ -1,5 +1,10 @@
 <script lang="ts">
-  const buttonArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+  import { settings } from '../GameSettings/$settings';
+
+  $: numButtons = Math.ceil($settings.maxNumberAllowed / 10) * 10;
+  $: buttonArray = Array(numButtons)
+    .fill(null)
+    .map((item, index) => index + 1);
 </script>
 
 <section>
