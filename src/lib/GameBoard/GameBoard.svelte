@@ -1,7 +1,7 @@
 <script lang="ts">
   import { settings } from '../GameSettings/$settings';
   import { correctCounter, currentQuestion } from '../questions/$progress';
-  import AnswerButtons from './AnswerButtons.svelte';
+  import AllAnswerButtons from './AnswerButtons/AllAnswerButtons.svelte';
   import Question from './Question/Question.svelte';
   import Score from './Score.svelte';
   import Success from './Success.svelte';
@@ -18,7 +18,7 @@
     <div>nothing to display, shouldn't happen</div>
   {:else}
     <Question />
-    <AnswerButtons />
+    <AllAnswerButtons />
   {/if}
 </div>
 

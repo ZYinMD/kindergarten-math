@@ -1,7 +1,6 @@
 <script lang="ts">
-  import { settings } from '../GameSettings/$settings';
-  import { correctCounter, currentQuestion, questionUtil } from '../questions/$progress';
-
+  import { settings } from '../../GameSettings/$settings';
+  import { correctCounter, currentQuestion, questionUtil } from '../../questions/$progress';
   $: numButtons = Math.ceil($settings.maxValueAllowed / 10) * 10;
   $: buttonArray = Array(numButtons)
     .fill(null)
