@@ -1,27 +1,28 @@
 <script lang="ts">
   import { currentQuestion } from '../questions/$progress';
+  import EmptySquare from './Question/EmptySquare.svelte';
   $: [a, b, c] = $currentQuestion.question;
   $: type = $currentQuestion.type;
 </script>
 
 <div class="self">
   {#if type === 'a+b=_'}
-    <div>{a} + {b} = _</div>
+    <code>{a} + {b} = <EmptySquare /></code>
   {/if}
   {#if type === 'a+_=c'}
-    <div>{a} + _ = {c}</div>
+    <code>{a} + <EmptySquare /> = {c}</code>
   {/if}
   {#if type === '_+b=c'}
-    <div>_ + {b} = {c}</div>
+    <code><EmptySquare /> + {b} = {c}</code>
   {/if}
   {#if type === 'c-b=_'}
-    <div>{c} - {b} = _</div>
+    <code>{c} - {b} = <EmptySquare /></code>
   {/if}
   {#if type === 'c-_=a'}
-    <div>{c} - _ = {a}</div>
+    <code>{c} - <EmptySquare /> = {a}</code>
   {/if}
   {#if type === '_-b=a'}
-    <div>_ - {b} = {a}</div>
+    <code><EmptySquare /> - {b} = {a}</code>
   {/if}
 </div>
 
@@ -29,5 +30,11 @@
   .self {
     grid-area: question;
     place-self: center;
+  }
+  code {
+    font-size: 4.5vw;
+    font-family: Consolas, monospace;
+    display: flex;
+    align-items: center;
   }
 </style>

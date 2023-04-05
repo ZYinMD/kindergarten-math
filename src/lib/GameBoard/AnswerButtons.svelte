@@ -16,7 +16,7 @@
     if (buttonNumber === answer) {
       correctCounter.update((prev) => prev + 1);
       if ($correctCounter >= $settings.numQuestions) {
-        console.log('won!');
+        console.debug('You won!');
         return;
       }
     } else {
@@ -49,13 +49,13 @@
     grid-template-columns: repeat(10, 1fr);
   }
   button {
-    width: 7vw;
-    height: 7vw;
+    width: var(--number-button-size);
+    height: var(--number-button-size);
     margin: 1vw;
     background-color: LightGreen;
     font-size: 2.5vw;
     color: #0008;
     border: none;
-    border-radius: 5px;
+    border-radius: var(--number-button-border-radius);
   }
 </style>
