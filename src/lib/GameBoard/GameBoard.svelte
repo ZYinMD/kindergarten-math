@@ -2,15 +2,15 @@
   import { settings } from '../GameSettings/$settings';
   import { correctCounter, currentQuestion } from '../questions/$progress';
   import AnswerButtons from './AnswerButtons.svelte';
-  import NewButton from './NewButton.svelte';
   import Question from './Question.svelte';
   import Score from './Score.svelte';
   import Success from './Success.svelte';
+  import TheNewButton from './TheNewButton.svelte';
 </script>
 
 <div class="self">
   <Score />
-  <NewButton />
+  <TheNewButton />
 
   {#if $correctCounter >= $settings.numQuestions}
     <Success />
