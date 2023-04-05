@@ -58,4 +58,9 @@
     border: none;
     border-radius: var(--number-button-border-radius);
   }
+  button:active {
+    opacity: 0.5;
+    transform: scale(1.2);
+    transition: transform 0.05s;
+  }
 </style>
