@@ -2,7 +2,7 @@
   import { settings } from '../GameSettings/$settings';
   import { correctCounter, currentQuestion } from '../questions/$progress';
   import AnswerButtons from './AnswerButtons.svelte';
-  import Question from './Question.svelte';
+  import Question from './Question/Question.svelte';
   import Score from './Score.svelte';
   import Success from './Success.svelte';
   import TheNewButton from './TheNewButton.svelte';

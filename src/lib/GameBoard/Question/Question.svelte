@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { currentQuestion } from '../questions/$progress';
-  import EmptySquare from './Question/EmptySquare.svelte';
+  import { currentQuestion } from '../../questions/$progress';
+  import EmptySquare from './EmptySquare.svelte';
   $: [a, b, c] = $currentQuestion.question;
   $: type = $currentQuestion.type;
 </script>
