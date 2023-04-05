@@ -2,6 +2,7 @@
   import { settings } from '../../GameSettings/$settings';
   import { correctCounter, currentQuestion, questionUtil } from '../../questions/$progress';
   export let buttonNumber: number;
+  let ref;
   function handleClickAnswerButton(buttonNumber: number) {
     const { question, type } = $currentQuestion;
     let answer = 0;
@@ -25,8 +26,17 @@
 </script>
 
 <button
+  bind:this={ref}
   on:click={() => {
     handleClickAnswerButton(buttonNumber);
+  }}
+  on:pointerdown={() => {
+    ref.style.transform = 'scale(1.1)';
+    ref.style.opacity = '0.8';
+  }}
+  on:pointerup={() => {
+    ref.style.transform = '';
+    ref.style.opacity = '';
   }}
 >
   {buttonNumber}
@@ -42,10 +52,5 @@
     color: #0008;
     border: none;
     border-radius: var(--number-button-border-radius);
-  }
-  button:active {
-    opacity: 0.5;
-    transform: scale(1.2);
-    transition: transform 0.05s;
   }
 </style>
