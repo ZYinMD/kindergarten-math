@@ -3,6 +3,14 @@
   import { correctCounter, currentQuestion, questionUtil } from '../../questions/$progress';
   export let buttonNumber: number;
   let ref;
+  function onPointerDown() {
+    ref.style.transform = 'scale(1.1)';
+    ref.style.opacity = '0.8';
+  }
+  function onPointerUp() {
+    ref.style.transform = '';
+    ref.style.opacity = '';
+  }
   function handleClickAnswerButton(buttonNumber: number) {
     const { question, type } = $currentQuestion;
     let answer = 0;
@@ -25,19 +33,16 @@
   }
 </script>
 
+<!-- I could just use pointerdown and pointerup if not for the safari 12 on Nolan's ipad -->
 <button
   bind:this={ref}
   on:click={() => {
     handleClickAnswerButton(buttonNumber);
   }}
-  on:pointerdown={() => {
-    ref.style.transform = 'scale(1.1)';
-    ref.style.opacity = '0.8';
-  }}
-  on:pointerup={() => {
-    ref.style.transform = '';
-    ref.style.opacity = '';
-  }}
+  on:mousedown={onPointerDown}
+  on:mouseup={onPointerUp}
+  on:touchstart={onPointerDown}
+  on:touchend={onPointerUp}
 >
   {buttonNumber}
 </button>
