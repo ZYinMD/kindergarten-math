@@ -1,6 +1,6 @@
 <script lang="ts">
   import { settings } from '../../GameSettings/$settings';
-  import { correctCounter, currentQuestion, questionUtil } from '../../questions/$progress';
+  import { correctAnswer, correctCounter } from '../../questions/$progress';
   export let buttonNumber: number;
   let ref;
   function onPointerDown() {
@@ -12,18 +12,15 @@
     ref.style.opacity = '';
   }
   function handleClickAnswerButton(buttonNumber: number) {
-    const { question, type } = $currentQuestion;
-    let correctAnswer = 0;
-    if (!type.includes('a')) correctAnswer = question[0];
-    if (!type.includes('b')) correctAnswer = question[1];
-    if (!type.includes('c')) correctAnswer = question[2];
-    if (buttonNumber === correctAnswer) {
+    if (buttonNumber === $correctAnswer) {
+      console.debug('Correct answer!');
       correctCounter.update((prev) => prev + 1);
       if ($correctCounter >= $settings.numQuestions) {
         console.debug('You won!');
         return;
       }
     } else {
+      console.debug('Wrong answer!');
       correctCounter.update((prev) => {
         if (prev > 0) return prev - 1;
         return prev;

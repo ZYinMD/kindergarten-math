@@ -8,7 +8,7 @@ on submit a question:
 
  */
 
-import { get, writable } from 'svelte/store';
+import { derived, get, writable } from 'svelte/store';
 import { settings, type defaultQuestionTypes } from '../GameSettings/$settings';
 import { generateQuestion } from './generateQuestions';
 
@@ -34,4 +34,16 @@ export const currentQuestion = writable<{
 
 currentQuestion.subscribe((value) => {
   console.debug('current question:', JSON.stringify(value));
+});
+
+export const correctAnswer = derived(currentQuestion, ($currentQuestion) => {
+  if (!$currentQuestion) return NaN;
+  const { question, type } = $currentQuestion;
+  return !type.includes('a')
+    ? question[0]
+    : !type.includes('b')
+    ? question[1]
+    : !type.includes('c')
+    ? question[2]
+    : NaN;
 });
