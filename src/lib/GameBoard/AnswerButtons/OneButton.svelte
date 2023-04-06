@@ -13,11 +13,11 @@
   }
   function handleClickAnswerButton(buttonNumber: number) {
     const { question, type } = $currentQuestion;
-    let answer = 0;
-    if (!type.includes('a')) answer = question[0];
-    if (!type.includes('b')) answer = question[1];
-    if (!type.includes('c')) answer = question[2];
-    if (buttonNumber === answer) {
+    let correctAnswer = 0;
+    if (!type.includes('a')) correctAnswer = question[0];
+    if (!type.includes('b')) correctAnswer = question[1];
+    if (!type.includes('c')) correctAnswer = question[2];
+    if (buttonNumber === correctAnswer) {
       correctCounter.update((prev) => prev + 1);
       if ($correctCounter >= $settings.numQuestions) {
         console.debug('You won!');
@@ -29,7 +29,7 @@
         return prev;
       });
     }
-    questionUtil.next();
+    // questionUtil.next();
   }
 </script>
 
