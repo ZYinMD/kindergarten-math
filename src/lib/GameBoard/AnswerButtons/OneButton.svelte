@@ -7,7 +7,7 @@
   } from '../../questions/$progress';
   import { ms } from '../../utils/ms';
   export let buttonNumber: number;
-  let ref;
+  let ref: HTMLButtonElement;
   function onPointerDown() {
     ref.style.transform = 'scale(1.15)';
     ref.style.opacity = '0.7';

@@ -49,8 +49,8 @@ export function* generateQuestion(settings: typeof defaultSettings) {
     if (sum !== lastSum) {
       lastSum = sum;
       const questionTypesAllowed = Object.entries(questionTypes)
-        .filter(([key, value]) => Boolean(value))
-        .map(([key, value]) => key);
+        .filter(([_key, value]) => Boolean(value))
+        .map(([key, _value]) => key);
       const randomIndex = Math.floor(Math.random() * questionTypesAllowed.length);
       const randomQuestionType = questionTypesAllowed[randomIndex];
       yield { question: randomTriplet, type: randomQuestionType };

@@ -4,7 +4,7 @@
   $: numButtons = Math.ceil($settings.maxValueAllowed / 10) * 10;
   $: buttonArray = Array(numButtons)
     .fill(null)
-    .map((item, index) => index + 1);
+    .map((_item, index) => index + 1);
 </script>
 
 <div class="self">
