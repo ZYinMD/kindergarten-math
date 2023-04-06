@@ -72,6 +72,8 @@
     width: var(--number-button-size);
     height: var(--number-button-size);
     margin: 1vw;
+    display: grid;
+    place-items: center;
     background-color: LightGreen;
     font-size: 2.7vw;
     color: #0008;

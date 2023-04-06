@@ -13,6 +13,6 @@ body {
   --base-font-family: -apple-system, BlinkMacSystemFont, 'Microsoft YaHei', 'PingFang SC',
     sans-serif;
   --number-button-size: 7.5vw;
-  --number-button-border-radius: 1.8vw;
+  --number-button-border-radius: 1.7vw;
   font-family: var(--base-font-family);
 }
