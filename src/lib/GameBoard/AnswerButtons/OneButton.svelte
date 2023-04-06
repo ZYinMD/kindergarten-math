@@ -4,8 +4,8 @@
   export let buttonNumber: number;
   let ref;
   function onPointerDown() {
-    ref.style.transform = 'scale(1.1)';
-    ref.style.opacity = '0.8';
+    ref.style.transform = 'scale(1.15)';
+    ref.style.opacity = '0.7';
   }
   function onPointerUp() {
     ref.style.transform = '';
@@ -44,7 +44,9 @@
   on:touchstart={onPointerDown}
   on:touchend={onPointerUp}
 >
-  {buttonNumber}
+  <span class="the-number-itself">
+    {buttonNumber}
+  </span>
 </button>
 
 <style>
@@ -59,5 +61,10 @@
     color: #0008;
     border: none;
     border-radius: var(--number-button-border-radius);
+  }
+  /* make the numbers not selectable. This is an issue if it's pressed for too long on touch device */
+  .the-number-itself {
+    -webkit-user-select: none; /* Safari */
+    user-select: none;
   }
 </style>
