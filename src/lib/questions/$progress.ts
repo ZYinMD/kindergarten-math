@@ -47,3 +47,9 @@ export const correctAnswer = derived(currentQuestion, ($currentQuestion) => {
     ? question[2]
     : NaN;
 });
+
+export const currentQuestionAnswer = writable({
+  value: NaN,
+  isCorrect: false,
+  hasTriedTimes: 0,
+});

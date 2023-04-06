@@ -31,7 +31,7 @@
 <style>
   .self {
     grid-area: question;
-    place-self: center;
+    justify-self: center;
   }
   code {
     font-size: 4.5vw;

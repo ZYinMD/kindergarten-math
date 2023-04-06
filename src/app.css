@@ -1,6 +1,5 @@
 html {
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, 'Microsoft YaHei', 'PingFang SC', sans-serif;
   text-rendering: optimizeLegibility;
   overflow: hidden;
   -webkit-font-smoothing: antialiased;
@@ -11,6 +10,9 @@ html {
 body {
   margin: 0;
   padding: 0;
+  --base-font-family: -apple-system, BlinkMacSystemFont, 'Microsoft YaHei', 'PingFang SC',
+    sans-serif;
   --number-button-size: 7.5vw;
-  --number-button-border-radius: 0.5vw;
+  --number-button-border-radius: 1.8vw;
+  font-family: var(--base-font-family);
 }

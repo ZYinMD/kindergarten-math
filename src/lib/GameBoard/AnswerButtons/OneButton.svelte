@@ -1,6 +1,11 @@
 <script lang="ts">
-  import { settings } from '../../GameSettings/$settings';
-  import { correctAnswer, correctCounter } from '../../questions/$progress';
+  import {
+    correctAnswer,
+    correctCounter,
+    currentQuestionAnswer,
+    questionUtil,
+  } from '../../questions/$progress';
+  import { ms } from '../../utils/ms';
   export let buttonNumber: number;
   let ref;
   function onPointerDown() {
@@ -11,20 +16,34 @@
     ref.style.transform = '';
     ref.style.opacity = '';
   }
-  function handleClickAnswerButton(buttonNumber: number) {
-    if (buttonNumber === $correctAnswer) {
+  async function handleClickAnswerButton(buttonNumber: number) {
+    const isCorrect = buttonNumber === $correctAnswer;
+    $currentQuestionAnswer.value = buttonNumber;
+    $currentQuestionAnswer.isCorrect = isCorrect;
+    $currentQuestionAnswer.hasTriedTimes++;
+
+    if (isCorrect) {
       console.debug('Correct answer!');
-      correctCounter.update((prev) => prev + 1);
-      if ($correctCounter >= $settings.numQuestions) {
-        console.debug('You won!');
-        return;
-      }
+      $currentQuestionAnswer.isCorrect = true;
     } else {
       console.debug('Wrong answer!');
-      correctCounter.update((prev) => {
-        if (prev > 0) return prev - 1;
-        return prev;
-      });
+      $currentQuestionAnswer.isCorrect = false;
+    }
+    await ms(1e3);
+    if (isCorrect) {
+      $currentQuestionAnswer.value = NaN;
+      $currentQuestionAnswer.hasTriedTimes = 0;
+      $correctCounter++;
+      questionUtil.next();
+    }
+    if (!isCorrect && $currentQuestionAnswer.hasTriedTimes === 1) {
+      $currentQuestionAnswer.value = NaN;
+    }
+    if (!isCorrect && $currentQuestionAnswer.hasTriedTimes >= 2) {
+      $currentQuestionAnswer.value = NaN;
+      $currentQuestionAnswer.hasTriedTimes = 0;
+      if ($correctCounter > 0) $correctCounter--;
+      questionUtil.next();
     }
     // questionUtil.next();
   }
@@ -54,7 +73,7 @@
     height: var(--number-button-size);
     margin: 1vw;
     background-color: LightGreen;
-    font-size: 2.5vw;
+    font-size: 2.7vw;
     color: #0008;
     border: none;
     border-radius: var(--number-button-border-radius);

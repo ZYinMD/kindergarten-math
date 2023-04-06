@@ -26,10 +26,11 @@
   .self {
     display: grid;
     grid:
-      'score new-button' 40px
-      'question question' 100px
-      'answer-buttons answer-buttons' 200px
+      'score new-button' 60px
+      'question question' 150px
+      'answer-buttons answer-buttons' 250px
       /
       auto auto;
+    align-items: end;
   }
 </style>

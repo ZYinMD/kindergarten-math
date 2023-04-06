@@ -13,7 +13,6 @@
 <style>
   .self {
     grid-area: new-button;
-    align-self: center;
     justify-self: end;
   }
 </style>

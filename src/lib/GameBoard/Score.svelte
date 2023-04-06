@@ -10,6 +10,5 @@
 <style>
   .self {
     grid-area: score;
-    align-self: center;
   }
 </style>
