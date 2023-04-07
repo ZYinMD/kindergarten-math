@@ -35,6 +35,41 @@ svm
     </label>
   {/each}
 </section>
+<section class="hint">
+  提示:
+  <label>
+    <input
+      type="radio"
+      name="hint"
+      bind:group={$settings.allowHint}
+      value="yes"
+      disabled={$settings.maxValueAllowed > 20}
+    />
+    显示
+  </label>
+
+  <label>
+    <input
+      type="radio"
+      name="hint"
+      bind:group={$settings.allowHint}
+      value="onClick"
+      disabled={$settings.maxValueAllowed > 20}
+    />
+    点击后显示
+  </label>
+
+  <label>
+    <input
+      type="radio"
+      name="hint"
+      bind:group={$settings.allowHint}
+      value="no"
+      disabled={$settings.maxValueAllowed > 20}
+    />
+    不显示
+  </label>
+</section>
 <div>
   <!-- svelte-ignore missing-declaration -->
   app version: {__version__}
