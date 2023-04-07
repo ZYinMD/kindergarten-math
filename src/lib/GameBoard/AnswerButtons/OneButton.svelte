@@ -1,3 +1,8 @@
+<script context="module" lang="ts">
+  import { writable } from 'svelte/store';
+  const buttonsDisabled = writable(false);
+</script>
+
 <script lang="ts">
   import {
     correctAnswer,
@@ -30,7 +35,9 @@
       console.debug('Wrong answer!');
       $currentQuestionAnswer.isCorrect = false;
     }
+    $buttonsDisabled = true;
     await ms(1e3);
+    $buttonsDisabled = false;
     if (isCorrect) {
       $currentQuestionAnswer.value = NaN;
       $currentQuestionAnswer.hasTriedTimes = 0;
@@ -53,6 +60,7 @@
 
 <!-- I could just use pointerdown and pointerup if not for the safari 12 on Nolan's ipad -->
 <button
+  disabled={$buttonsDisabled}
   bind:this={ref}
   on:click={() => {
     handleClickAnswerButton(buttonNumber);
