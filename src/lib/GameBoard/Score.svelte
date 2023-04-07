@@ -4,11 +4,14 @@
 </script>
 
 <div class="self">
-  Score: {$correctCounter} / {$settings.numQuestions}
+  进度: {$correctCounter} / {$settings.numQuestions}
 </div>
 
 <style>
   .self {
     grid-area: score;
+    font-size: 2.3vw;
+    color: grey;
+    margin-left: 4vw;
   }
 </style>

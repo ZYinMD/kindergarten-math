@@ -1,8 +1,14 @@
+<script context="module" lang="ts">
+  declare const __version__: string;
+</script>
+
 <script lang="ts">
   import { currentView } from '../../$app';
   import { questionUtil } from '../questions/$progress';
   import { defaultQuestionTypes, settings } from './$settings';
 </script>
+
+svm
 
 <section>
   最大数值不超过: {$settings.maxValueAllowed}
@@ -30,8 +36,8 @@
   {/each}
 </section>
 <div>
-  store value:
-  <pre>{JSON.stringify($settings, null, 2)}</pre>
+  <!-- svelte-ignore missing-declaration -->
+  app version: {__version__}
 </div>
 
 <section>

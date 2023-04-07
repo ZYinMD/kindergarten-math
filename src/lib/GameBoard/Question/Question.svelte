@@ -7,7 +7,7 @@
 </script>
 
 {#key $currentQuestion.question}
-  <div class="self" out:fly={{ x: '-34vw', y: '-7vw', duration: 200 }}>
+  <div class="self" out:fly={{ x: '-34vw', y: '-10vw', duration: 200 }}>
     {#if type === 'a+b=_'}
       <code>{a} + {b} = <EmptySquare /></code>
     {/if}

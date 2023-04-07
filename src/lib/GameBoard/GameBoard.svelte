@@ -26,9 +26,9 @@
   .self {
     display: grid;
     grid:
-      'score new-button' 60px
-      'question question' 150px
-      'answer-buttons answer-buttons' 250px
+      'score the-new-button' min(7vw, 12vh)
+      'question question' min(14vw, 20vh)
+      'answer-buttons answer-buttons' min(23vw, 40vh)
       /
       auto auto;
     align-items: end;

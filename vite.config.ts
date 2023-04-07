@@ -6,6 +6,7 @@ import { svelte } from '@sveltejs/vite-plugin-svelte';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [svelte()],
+  define: { __version__: JSON.stringify(process.env.npm_package_version) },
   build: {
     target: 'safari12',
   },
