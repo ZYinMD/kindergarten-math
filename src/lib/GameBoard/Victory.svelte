@@ -1,7 +1,7 @@
 <script lang="ts">
 </script>
 
-<div>Success!</div>
+<div>Victory!</div>
 
 <style>
 </style>

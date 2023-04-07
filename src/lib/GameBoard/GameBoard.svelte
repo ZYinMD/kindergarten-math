@@ -4,7 +4,7 @@
   import AllAnswerButtons from './AnswerButtons/AllAnswerButtons.svelte';
   import Question from './Question/Question.svelte';
   import Score from './Score/ScoreCounter.svelte';
-  import Success from './Success.svelte';
+  import Victory from './Victory.svelte';
   import TheNewButton from './TheNewButton.svelte';
 </script>
 
@@ -13,7 +13,7 @@
   <TheNewButton />
 
   {#if $correctCounter >= $settings.numQuestions}
-    <Success />
+    <Victory />
   {:else if !$currentQuestion}
     <div>nothing to display, shouldn't happen</div>
   {:else}
