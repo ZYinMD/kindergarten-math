@@ -16,6 +16,7 @@
     color: grey;
     margin-left: 4vw;
     display: grid;
+    justify-self: start;
     grid:
       'counter flasher' 5vw
       /

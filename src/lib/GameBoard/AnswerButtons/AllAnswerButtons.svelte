@@ -16,7 +16,6 @@
 <style>
   .self {
     grid-area: answer-buttons;
-    justify-self: center;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
   }

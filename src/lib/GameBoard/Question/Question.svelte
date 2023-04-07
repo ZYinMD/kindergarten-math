@@ -54,7 +54,6 @@
 <style>
   .self {
     grid-area: question;
-    justify-self: center;
   }
   code {
     font-size: 4.5vw;
