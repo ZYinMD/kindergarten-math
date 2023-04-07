@@ -6,6 +6,7 @@
     questionUtil,
   } from '../../questions/$progress';
   import { ms } from '../../utils/ms';
+  import { scoreFlasher } from '../Score/ScoreFlasher.svelte';
   export let buttonNumber: number;
   let ref: HTMLButtonElement;
   function onPointerDown() {
@@ -34,6 +35,7 @@
       $currentQuestionAnswer.value = NaN;
       $currentQuestionAnswer.hasTriedTimes = 0;
       $correctCounter++;
+      scoreFlasher.set('plus');
       questionUtil.next();
     }
     if (!isCorrect && $currentQuestionAnswer.hasTriedTimes === 1) {
@@ -42,10 +44,10 @@
     if (!isCorrect && $currentQuestionAnswer.hasTriedTimes >= 2) {
       $currentQuestionAnswer.value = NaN;
       $currentQuestionAnswer.hasTriedTimes = 0;
+      scoreFlasher.set('minus');
       if ($correctCounter > 0) $correctCounter--;
       questionUtil.next();
     }
-    // questionUtil.next();
   }
 </script>
 

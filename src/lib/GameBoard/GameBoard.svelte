@@ -3,7 +3,7 @@
   import { correctCounter, currentQuestion } from '../questions/$progress';
   import AllAnswerButtons from './AnswerButtons/AllAnswerButtons.svelte';
   import Question from './Question/Question.svelte';
-  import Score from './Score.svelte';
+  import Score from './Score/ScoreCounter.svelte';
   import Success from './Success.svelte';
   import TheNewButton from './TheNewButton.svelte';
 </script>
@@ -32,5 +32,6 @@
       /
       auto auto;
     align-items: end;
+    justify-items: start;
   }
 </style>
