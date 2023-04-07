@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { fly } from 'svelte/transition';
+  import { fly, scale } from 'svelte/transition';
   import { currentQuestion } from '../../questions/$progress';
   import EmptySquare from './EmptySquare.svelte';
   $: [a, b, c] = $currentQuestion.question;
@@ -7,7 +7,11 @@
 </script>
 
 {#key $currentQuestion.question}
-  <div class="self" out:fly={{ x: '-34vw', y: '-10vw', duration: 200 }}>
+  <div
+    class="self"
+    in:scale={{ delay: 300, duration: 100 }}
+    out:fly={{ x: '-34vw', y: '-10vw', duration: 200 }}
+  >
     {#if type === 'a+b=_'}
       <code>{a} + {b} = <EmptySquare /></code>
     {/if}
