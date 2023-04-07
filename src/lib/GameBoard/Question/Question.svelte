@@ -1,17 +1,36 @@
 <script lang="ts">
-  import { fly, scale } from 'svelte/transition';
+  import { sineInOut } from 'svelte/easing';
+  import type { TransitionConfig } from 'svelte/transition';
+
   import { currentQuestion } from '../../questions/$progress';
   import EmptySquare from './EmptySquare.svelte';
   $: [a, b, c] = $currentQuestion.question;
   $: type = $currentQuestion.type;
+  function rotateIn(_node): TransitionConfig {
+    return {
+      delay: 300,
+      duration: 100,
+      css: (t, _u) => `
+        opacity: ${t};
+        transform: rotateX(${0.75 + t / 4}turn);
+      `,
+    };
+  }
+  function flyAway(_node): TransitionConfig {
+    return {
+      duration: 300,
+      delay: 0,
+      easing: sineInOut,
+      css: (t, u) =>
+        `transform: translateX(${-34 * u}vw) translateY(${-10 * u}vw) rotateZ(${
+          -140 * u
+        }deg) scale(${t});`,
+    };
+  }
 </script>
 
 {#key $currentQuestion.question}
-  <div
-    class="self"
-    in:scale={{ delay: 300, duration: 100 }}
-    out:fly={{ x: '-34vw', y: '-10vw', duration: 200 }}
-  >
+  <div class="self" in:rotateIn out:flyAway>
     {#if type === 'a+b=_'}
       <code>{a} + {b} = <EmptySquare /></code>
     {/if}
