@@ -60,5 +60,6 @@
     font-family: Consolas, monospace;
     display: flex;
     align-items: center;
+    white-space: pre;
   }
 </style>

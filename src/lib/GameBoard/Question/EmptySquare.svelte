@@ -15,7 +15,6 @@
   .self {
     display: grid;
     place-items: center;
-    margin: 0.5em;
     font-size: 0.7em;
     font-family: var(--base-font-family);
     color: #0008;
