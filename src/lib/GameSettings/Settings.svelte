@@ -8,8 +8,6 @@
   import { defaultQuestionTypes, settings } from './$settings';
 </script>
 
-svm
-
 <section>
   最大数值不超过: {$settings.maxValueAllowed}
 
@@ -45,7 +43,7 @@ svm
       value="yes"
       disabled={$settings.maxValueAllowed > 20}
     />
-    显示
+    始终显示
   </label>
 
   <label>
@@ -70,10 +68,6 @@ svm
     不显示
   </label>
 </section>
-<div>
-  <!-- svelte-ignore missing-declaration -->
-  app version: {__version__}
-</div>
 
 <section>
   <button
@@ -86,9 +80,17 @@ svm
   </button>
 </section>
 
+<section class="app-version">
+  <!-- svelte-ignore missing-declaration -->
+  app version: {__version__}
+</section>
+
 <style>
   .question-types {
     display: flex;
     flex-direction: column;
+  }
+  .app-version {
+    color: #ddd;
   }
 </style>
