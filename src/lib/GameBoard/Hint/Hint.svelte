@@ -2,20 +2,20 @@
   import Tiles from './Tiles.svelte';
 </script>
 
-<div class="self">
+<div class="container">
+  <Tiles />
   <div class="button">
     <button> 提示 </button>
   </div>
-  <Tiles />
 </div>
 
 <style>
-  .self {
+  .container {
     grid-area: hint;
     display: grid;
     grid:
       'tiles' auto
-      'button' 4vw
+      'button' 3vw
       /
       auto;
   }

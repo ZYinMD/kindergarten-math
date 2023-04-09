@@ -4,19 +4,20 @@
   import ScoreFlasher from './ScoreFlasher.svelte';
 </script>
 
-<div class="self">
+<div class="container">
   <div class="counter">进度: {$correctCounter} / {$settings.numQuestions}</div>
   <ScoreFlasher />
 </div>
 
 <style>
-  .self {
+  .container {
     grid-area: score;
     font-size: 2.3vw;
     color: grey;
     margin-left: 4vw;
     display: grid;
     justify-self: start;
+    align-items: center;
     grid:
       'counter flasher' 5vw
       /
@@ -26,6 +27,5 @@
   .counter {
     grid-area: counter;
     justify-self: start;
-    align-self: end;
   }
 </style>

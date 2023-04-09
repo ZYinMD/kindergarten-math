@@ -7,14 +7,14 @@
     .map((_item, index) => index + 1);
 </script>
 
-<div class="self">
+<div class="container">
   {#each buttonArray as buttonNumber (buttonNumber)}
     <OneButton {buttonNumber} />
   {/each}
 </div>
 
 <style>
-  .self {
+  .container {
     grid-area: answer-buttons;
     display: grid;
     grid-template-columns: repeat(10, 1fr);

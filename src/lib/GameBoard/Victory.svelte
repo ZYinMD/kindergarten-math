@@ -1,7 +1,12 @@
 <script lang="ts">
 </script>
 
-<div>Victory!</div>
+<div class="container">Victory</div>
 
 <style>
+  .container {
+    background-color: Pink;
+    display: grid;
+    place-items: center;
+  }
 </style>

@@ -27,14 +27,14 @@
 <style>
   .self {
     display: grid;
+    padding-top: min(2vw, 2vh);
     grid:
       'score the-new-button' min(7vw, 12vh)
       'question question' min(14vw, 20vh)
-      'answer-buttons answer-buttons' min(23vw, 40vh)
-      'hint hint' min(11vw, 40vh)
+      'answer-buttons answer-buttons' min(23vw, 42vh)
+      'hint hint' min(14vw, 40vh)
       /
       auto auto;
-    align-items: end;
-    justify-items: center;
+    place-items: center;
   }
 </style>
