@@ -14,8 +14,8 @@
     grid-area: hint;
     display: grid;
     grid:
-      'button' 4vw
       'tiles' auto
+      'button' 4vw
       /
       auto;
   }

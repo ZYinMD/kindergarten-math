@@ -1,9 +1,13 @@
 <script lang="ts">
   import { currentQuestion } from '../../questions/$progress';
-
   export let number: number;
-  $: [a, b, c] = $currentQuestion.question;
-  $: color = number <= a ? 'Orange' : number <= c ? 'LightSkyBlue' : 'transparent';
+  let color: string;
+  $: {
+    const [a, _b, c] = $currentQuestion.question;
+    if (number <= a) color = 'SkyBlue';
+    else if (number <= c) color = 'Orange';
+    else color = 'transparent';
+  }
 </script>
 
 <div class="self">
