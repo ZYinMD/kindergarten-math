@@ -3,7 +3,7 @@
   import type { TransitionConfig } from 'svelte/transition';
 
   import { currentQuestion } from '../../questions/$progress';
-  import EmptySquare from './EmptySquare.svelte';
+  import Cloze from './Cloze.svelte';
   $: [a, b, c] = $currentQuestion.question;
   $: type = $currentQuestion.type;
   function rotateIn(_node): TransitionConfig {
@@ -32,22 +32,22 @@
 {#key $currentQuestion.question}
   <div class="self" in:rotateIn out:flyAway>
     {#if type === 'a+b=_'}
-      <code>{a} + {b} = <EmptySquare /></code>
+      <code>{a} + {b} = <Cloze /></code>
     {/if}
     {#if type === 'a+_=c'}
-      <code>{a} + <EmptySquare /> = {c}</code>
+      <code>{a} + <Cloze /> = {c}</code>
     {/if}
     {#if type === '_+b=c'}
-      <code><EmptySquare /> + {b} = {c}</code>
+      <code><Cloze /> + {b} = {c}</code>
     {/if}
     {#if type === 'c-b=_'}
-      <code>{c} - {b} = <EmptySquare /></code>
+      <code>{c} - {b} = <Cloze /></code>
     {/if}
     {#if type === 'c-_=a'}
-      <code>{c} - <EmptySquare /> = {a}</code>
+      <code>{c} - <Cloze /> = {a}</code>
     {/if}
     {#if type === '_-b=a'}
-      <code><EmptySquare /> - {b} = {a}</code>
+      <code><Cloze /> - {b} = {a}</code>
     {/if}
   </div>{/key}
 
