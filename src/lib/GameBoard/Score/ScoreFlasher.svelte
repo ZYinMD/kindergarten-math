@@ -1,5 +1,7 @@
 <script context="module" lang="ts">
   import { writable } from 'svelte/store';
+  import { scale } from 'svelte/transition';
+
   export const scoreFlasher = writable<'plus' | 'minus' | null>(null);
   let timer: number;
   scoreFlasher.subscribe((value) => {
@@ -16,10 +18,10 @@
 </script>
 
 {#if $scoreFlasher === 'plus'}
-  <div class="self green">+1</div>
+  <div class="self green" transition:scale>+1</div>
 {/if}
 {#if $scoreFlasher === 'minus'}
-  <div class="self pink">-1</div>
+  <div class="self pink" transition:scale>-1</div>
 {/if}
 
 <style>
@@ -30,8 +32,6 @@
     height: 5vw;
     width: 5vw;
     border-radius: 50%;
-    position: relative;
-    top: 0.9vw;
     color: white;
   }
   .green {
