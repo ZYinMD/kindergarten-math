@@ -5,7 +5,7 @@
   $: {
     const [a, _b, c] = $currentQuestion.question;
     if (number <= a) color = 'SkyBlue';
-    else if (number <= c) color = 'Orange';
+    else if (number <= c) color = 'Plum';
     else color = 'transparent';
   }
 </script>
@@ -25,6 +25,5 @@
   .square {
     width: 1.2vw;
     height: 2vw;
-    opacity: 0.8;
   }
 </style>
