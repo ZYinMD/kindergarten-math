@@ -27,10 +27,10 @@
 <style>
   .self {
     display: grid;
-    padding-top: min(2vw, 2vh);
+    padding-top: min(2vw, 1vh);
     grid:
-      'score the-new-button' min(7vw, 11vh)
-      'question question' min(14vw, 18vh)
+      'score the-new-button' min(7vw, 10vh)
+      'question question' min(14vw, 17vh)
       'answer-buttons answer-buttons' min(23vw, 44vh)
       'hint hint' min(14vw, 20vh)
       /
