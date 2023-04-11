@@ -10,7 +10,7 @@
 
 <div class="container">
   <section>
-    最大数值不超过: {$settings.maxValueAllowed}
+    涉及数值不超过: {$settings.maxValueAllowed}
 
     <label>
       <input type="range" bind:value={$settings.maxValueAllowed} min="5" max="20" />
@@ -97,7 +97,7 @@
     font-size: 1.5vw;
   }
   section {
-    margin-bottom: 3.2vw;
+    margin-bottom: 3.3vw;
   }
   .question-types {
     margin: 0.5rem 0;
