@@ -26,5 +26,5 @@ settings.subscribe((value) => {
   if (value.maxValueAllowed > 20) value.allowHint = 'no';
   if (value.allowHint === 'always') showingHint.set(true);
   else showingHint.set(false);
-  localStorage.setItem('settings_v1', JSON.stringify(value));
+  localStorage.setItem('settings_v2', JSON.stringify(value));
 });
