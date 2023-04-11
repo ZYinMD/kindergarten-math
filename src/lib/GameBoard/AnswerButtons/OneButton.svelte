@@ -12,6 +12,7 @@
   } from '../../questions/$progress';
   import { ms } from '../../utils/ms';
   import { scoreFlasher } from '../Score/ScoreFlasher.svelte';
+  import { correctSound, wrongSound } from '../../utils/sounds';
   export let buttonNumber: number;
   let ref: HTMLButtonElement;
   function onPointerDown() {
@@ -30,9 +31,11 @@
 
     if (isCorrect) {
       console.debug('Correct answer!');
+      correctSound.play();
       $currentQuestionAnswer.isCorrect = true;
     } else {
       console.debug('Wrong answer!');
+      wrongSound.play();
       $currentQuestionAnswer.isCorrect = false;
     }
     $buttonsDisabled = true;
