@@ -1,12 +1,11 @@
 <script lang="ts">
   import { sineInOut } from 'svelte/easing';
   import type { TransitionConfig } from 'svelte/transition';
-
   import { currentQuestion } from '../../questions/$progress';
   import Cloze from './Cloze.svelte';
   $: [a, b, c] = $currentQuestion.question;
   $: type = $currentQuestion.type;
-  function rotateIn(_node): TransitionConfig {
+  function rotateIn(_node: Node): TransitionConfig {
     return {
       delay: 300,
       duration: 100,
@@ -16,7 +15,7 @@
       `,
     };
   }
-  function flyAway(_node): TransitionConfig {
+  function flyAway(_node: Node): TransitionConfig {
     return {
       duration: 300,
       delay: 0,
