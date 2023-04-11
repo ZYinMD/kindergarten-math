@@ -97,7 +97,7 @@
     font-size: 1.5vw;
   }
   section {
-    margin-bottom: 1em;
+    margin-bottom: 3.2vw;
   }
   .question-types {
     margin: 0.5rem 0;
