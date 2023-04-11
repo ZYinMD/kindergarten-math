@@ -93,6 +93,9 @@
     padding: 4vw;
     font-size: 2vw;
   }
+  button {
+    font-size: 1.5vw;
+  }
   section {
     margin-bottom: 1em;
   }
