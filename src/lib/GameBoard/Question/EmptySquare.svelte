@@ -18,6 +18,7 @@
     font-size: 0.7em;
     font-family: var(--base-font-family);
     color: #0008;
+    opacity: 0.9;
     width: var(--number-button-size);
     height: var(--number-button-size);
     border-radius: var(--number-button-border-radius);
