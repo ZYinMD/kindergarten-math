@@ -85,6 +85,7 @@
     display: grid;
     place-items: center;
     background-color: LightGreen;
+    opacity: 0.9;
     font-size: 2.7vw;
     color: #0008;
     border: none;

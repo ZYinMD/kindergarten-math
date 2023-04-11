@@ -1,17 +1,11 @@
 <script lang="ts">
   import { currentQuestion } from '../../questions/$progress';
   export let number: number;
-  let color: string;
-  $: {
-    const [a, _b, c] = $currentQuestion.question;
-    if (number <= a) color = 'SkyBlue';
-    else if (number <= c) color = 'Plum';
-    else color = 'transparent';
-  }
+  $: [a, _b, c] = $currentQuestion.question;
 </script>
 
 <div class="self">
-  <div class="square" style:background-color={color} />
+  <div class="square" class:a={number <= a} class:b={number <= c && number > a} />
 </div>
 
 <style>
@@ -25,5 +19,11 @@
   .square {
     width: 1.2vw;
     height: 2vw;
+  }
+  .a {
+    background-color: MediumAquamarine;
+  }
+  .b {
+    background-color: orange;
   }
 </style>
