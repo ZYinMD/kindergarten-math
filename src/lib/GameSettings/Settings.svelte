@@ -42,7 +42,7 @@
         type="radio"
         name="hint"
         bind:group={$settings.allowHint}
-        value="yes"
+        value="always"
         disabled={$settings.maxValueAllowed > 20}
       />
       始终显示

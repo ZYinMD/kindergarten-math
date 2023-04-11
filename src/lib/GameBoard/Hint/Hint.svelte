@@ -1,12 +1,23 @@
 <script lang="ts">
+  import { settings, showingHint } from '../../GameSettings/$settings';
   import Tiles from './Tiles.svelte';
+  function handleClickHintButton() {
+    if ($settings.allowHint === 'onClick') {
+      $showingHint = true;
+    }
+  }
 </script>
 
 <div class="container">
-  <Tiles />
-  <div class="button">
-    <button> 提示 </button>
-  </div>
+  {#if $showingHint}
+    <Tiles />
+  {/if}
+
+  {#if $settings.allowHint !== 'no'}
+    <div class="button">
+      <button on:click={handleClickHintButton}> 提示 </button>
+    </div>
+  {/if}
 </div>
 
 <style>

@@ -4,7 +4,7 @@
   import Tiles1to20 from './Tiles1to20.svelte';
 </script>
 
-<div class="self">
+<div class="container">
   {#if $settings.maxValueAllowed <= 10}
     <Tiles1to10 />
   {:else}
@@ -13,4 +13,7 @@
 </div>
 
 <style>
+  .container {
+    grid-area: tiles;
+  }
 </style>

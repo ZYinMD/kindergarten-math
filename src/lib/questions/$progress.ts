@@ -9,7 +9,7 @@ on submit a question:
  */
 
 import { derived, get, writable } from 'svelte/store';
-import { settings, type defaultQuestionTypes } from '../GameSettings/$settings';
+import { settings, showingHint, type defaultQuestionTypes } from '../GameSettings/$settings';
 import { generateQuestion } from './generateQuestions';
 
 export const correctCounter = writable(0);
@@ -24,6 +24,7 @@ export const questionUtil = {
   },
   next() {
     currentQuestion.set(this.generator.next().value);
+    if (get(settings).allowHint !== 'always') showingHint.set(false);
   },
 };
 
