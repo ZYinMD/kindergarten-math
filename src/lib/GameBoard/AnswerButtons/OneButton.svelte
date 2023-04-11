@@ -11,8 +11,8 @@
     questionUtil,
   } from '../../questions/$progress';
   import { ms } from '../../utils/ms';
-  import { scoreFlasher } from '../Score/ScoreFlasher.svelte';
   import { correctSound, wrongSound } from '../../utils/sounds';
+  import { scoreFlasher } from '../Score/ScoreFlasher.svelte';
   export let buttonNumber: number;
   let ref: HTMLButtonElement;
   function onPointerDown() {
@@ -85,6 +85,7 @@
     width: var(--number-button-size);
     height: var(--number-button-size);
     margin: 1vw;
+    padding: 0;
     display: grid;
     place-items: center;
     background-color: LightGreen;
