@@ -10,7 +10,7 @@
     currentQuestionAnswer,
     questionUtil,
   } from '../../questions/$progress';
-  import { ms } from '../../utils/ms';
+  import { sleep } from '../../utils/sleep';
   import { correctSound, wrongSound } from '../../utils/sounds';
   import { scoreFlasher } from '../Score/ScoreFlasher.svelte';
   export let buttonNumber: number;
@@ -39,7 +39,7 @@
       $currentQuestionAnswer.isCorrect = false;
     }
     $buttonsDisabled = true;
-    await ms(1e3);
+    await sleep(1e3);
     $buttonsDisabled = false;
     if (isCorrect) {
       $currentQuestionAnswer.value = NaN;
