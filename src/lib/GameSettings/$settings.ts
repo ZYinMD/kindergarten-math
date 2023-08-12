@@ -10,13 +10,19 @@ export const defaultQuestionTypes = {
 };
 
 export const defaultSettings = {
+  schemaVersion: 2, // if the shape of this object gets changed in the future, increment this number
   numQuestions: 10,
   maxValueAllowed: 10,
   questionTypes: defaultQuestionTypes,
   allowHint: 'always' as 'always' | 'no' | 'onClick',
 };
 
-const initialSettings = JSON.parse(localStorage.getItem('settings_v2')) || defaultSettings;
+const persistedUserSettings = JSON.parse(
+  localStorage.getItem(`settings_v${defaultSettings.schemaVersion}`),
+);
+console.debug('Settings used last time:', persistedUserSettings);
+
+const initialSettings = persistedUserSettings || defaultSettings;
 
 export const settings = writable(initialSettings);
 export const showingHint = writable(initialSettings.allowHint === 'always');
