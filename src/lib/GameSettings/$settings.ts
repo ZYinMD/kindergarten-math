@@ -14,7 +14,7 @@ export const defaultSettings = {
   numQuestions: 10,
   maxValueAllowed: 10,
   questionTypes: defaultQuestionTypes,
-  allowHint: 'always' as 'always' | 'no' | 'onClick',
+  allowHint: 'always' as 'always' | 'no' | 'onClick', // hint is the little squares under the question
 };
 
 const persistedUserSettings = JSON.parse(
@@ -24,8 +24,8 @@ console.debug('Settings used last time:', persistedUserSettings);
 
 const initialSettings = persistedUserSettings || defaultSettings;
 
-export const settings = writable(initialSettings);
-export const showingHint = writable(initialSettings.allowHint === 'always');
+export const settings = writable(initialSettings); // configs for this game
+export const showingHint = writable(initialSettings.allowHint === 'always'); // whether the hint is currently showing under the question
 
 settings.subscribe((value) => {
   console.debug(`settings changed`, value);
