@@ -10,22 +10,21 @@
 
 <div class="container">
   <section>
-    涉及数值不超过: {$settings.maxValueAllowed}
-
+    Involve no greater numbers than: {$settings.maxValueAllowed}
     <label>
       <input type="range" bind:value={$settings.maxValueAllowed} min="5" max="20" />
     </label>
   </section>
 
   <section>
-    题目数量: {$settings.numQuestions}
+    Number of questions: {$settings.numQuestions}
     <label>
       <input type="range" bind:value={$settings.numQuestions} min="5" max="25" />
     </label>
   </section>
 
   <section>
-    允许题型:
+    Type of questions:
     <div class="question-types">
       {#each Object.keys(defaultQuestionTypes) as key (key)}
         <label>
@@ -36,7 +35,7 @@
     </div>
   </section>
   <section class="hint">
-    提示:
+    Hint:
     <label>
       <input
         type="radio"
@@ -45,7 +44,7 @@
         value="always"
         disabled={$settings.maxValueAllowed > 20}
       />
-      始终显示
+      Always show
     </label>
 
     <label>
@@ -56,7 +55,7 @@
         value="onClick"
         disabled={$settings.maxValueAllowed > 20}
       />
-      点击后显示
+      Show on tap
     </label>
 
     <label>
@@ -67,7 +66,7 @@
         value="no"
         disabled={$settings.maxValueAllowed > 20}
       />
-      不显示
+      Don't show
     </label>
   </section>
 
@@ -78,7 +77,7 @@
         currentView.set('questions');
       }}
     >
-      开始
+      Start!
     </button>
   </section>
 

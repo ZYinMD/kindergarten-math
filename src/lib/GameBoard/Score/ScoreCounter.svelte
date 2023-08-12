@@ -5,7 +5,7 @@
 </script>
 
 <div class="container">
-  <div class="counter">进度: {$correctCounter} / {$settings.numQuestions}</div>
+  <div class="counter">Progress: {$correctCounter} / {$settings.numQuestions}</div>
   <ScoreFlasher />
 </div>
 

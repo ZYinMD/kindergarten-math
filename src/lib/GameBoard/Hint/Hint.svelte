@@ -15,7 +15,7 @@
 
   {#if $settings.allowHint !== 'no'}
     <div class="button">
-      <button on:click={handleClickHintButton}> 提示 </button>
+      <button on:click={handleClickHintButton}> Hint </button>
     </div>
   {/if}
 </div>

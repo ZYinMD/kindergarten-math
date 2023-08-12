@@ -1,7 +1,7 @@
 <script lang="ts">
 </script>
 
-<div class="container">全部完成!!</div>
+<div class="container">All done!!</div>
 
 <style>
   .container {
