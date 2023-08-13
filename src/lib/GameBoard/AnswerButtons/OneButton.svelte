@@ -1,6 +1,6 @@
 <script context="module" lang="ts">
   import { writable } from 'svelte/store';
-  const buttonsDisabled = writable(false);
+  const buttonsDisabled = writable(false); // all buttons are disabled for 1 second after hitting any one of them, animation happens in this second
 </script>
 
 <script lang="ts">
@@ -25,8 +25,8 @@
   }
   async function handleClickAnswerButton(buttonNumber: number) {
     const isCorrect = buttonNumber === $correctAnswer;
-    $currentQuestionAnswer.value = buttonNumber;
     $currentQuestionAnswer.isCorrect = isCorrect;
+    $currentQuestionAnswer.value = buttonNumber;
     $currentQuestionAnswer.hasTriedTimes++;
 
     if (isCorrect) {
@@ -61,7 +61,7 @@
   }
 </script>
 
-<!-- I could just use pointerdown and pointerup if not for the safari 12 on Nolan's ipad -->
+<!-- I could just use pointerdown and pointerup if not for the safari 12 on my son's old ipad -->
 <button
   disabled={$buttonsDisabled}
   bind:this={ref}
