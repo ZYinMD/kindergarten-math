@@ -1,7 +1,7 @@
 <script lang="ts">
   import { settings, showingHint } from '../../GameSettings/$settings';
   import Tiles from './Tiles.svelte';
-  function handleClickHintButton() {
+  function handleClickHintToggle() {
     if ($settings.allowHint === 'onClick') {
       $showingHint = true;
     }
@@ -15,7 +15,7 @@
 
   {#if $settings.allowHint !== 'no'}
     <div class="button">
-      <button on:click={handleClickHintButton}> Hint </button>
+      <button on:click={handleClickHintToggle}> Hint </button>
     </div>
   {/if}
 </div>
