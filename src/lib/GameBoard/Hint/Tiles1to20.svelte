@@ -5,6 +5,7 @@
     .map((_item, index) => index + 1);
 </script>
 
+<!-- @component a hint row of 10 boxes -->
 <div class="container">
   <div class="tiles">
     {#each array1to20 as number (number)}

@@ -4,6 +4,7 @@
   $: [a, _b, c] = $currentQuestion.question;
 </script>
 
+<!-- @component One square in the hint row. -->
 <div class="self">
   <div class="square" class:a={number <= a} class:b={number <= c && number > a} />
 </div>

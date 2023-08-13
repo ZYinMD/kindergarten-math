@@ -4,7 +4,7 @@
   import Tiles1to20 from './Tiles1to20.svelte';
 </script>
 
-<!-- @component One square in the hint row. -->
+<!-- @component the row of squares in hint -->
 <div class="container">
   {#if $settings.maxValueAllowed <= 10}
     <Tiles1to10 />
