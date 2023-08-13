@@ -9,7 +9,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",
-    "version": "pwsh version.ps1"
+    "version": "bash version.sh"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^2.0.4",
