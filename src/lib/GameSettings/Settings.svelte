@@ -19,7 +19,7 @@
   <section>
     Number of questions: {$settings.numQuestions}
     <label>
-      <input type="range" bind:value={$settings.numQuestions} min="5" max="25" />
+      <input type="range" bind:value={$settings.numQuestions} min="3" max="30" />
     </label>
   </section>
 
