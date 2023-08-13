@@ -50,7 +50,7 @@ export const correctAnswer = derived(currentQuestion, ($currentQuestion) => {
 });
 
 export const currentQuestionAnswer = writable({
-  value: NaN,
+  value: NaN, // the value will display on the question stem. If NaN, will be empty box. If non NaN, will show green or red color depending on if correct.
   isCorrect: false,
   hasTriedTimes: 0,
 });

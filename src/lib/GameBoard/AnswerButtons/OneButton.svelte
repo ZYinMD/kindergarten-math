@@ -41,18 +41,14 @@
     $buttonsDisabled = true;
     await sleep(1e3);
     $buttonsDisabled = false;
+    $currentQuestionAnswer.value = NaN;
     if (isCorrect) {
-      $currentQuestionAnswer.value = NaN;
       $currentQuestionAnswer.hasTriedTimes = 0;
       $correctCounter++;
       scoreFlasher.set('plus');
       questionUtil.next();
     }
-    if (!isCorrect && $currentQuestionAnswer.hasTriedTimes === 1) {
-      $currentQuestionAnswer.value = NaN;
-    }
     if (!isCorrect && $currentQuestionAnswer.hasTriedTimes >= 2) {
-      $currentQuestionAnswer.value = NaN;
       $currentQuestionAnswer.hasTriedTimes = 0;
       scoreFlasher.set('minus');
       if ($correctCounter > 0) $correctCounter--;
