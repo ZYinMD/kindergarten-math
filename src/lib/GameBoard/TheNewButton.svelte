@@ -2,15 +2,16 @@
   import { currentView } from '../../$app';
 </script>
 
+<!-- @component the "new" button on the top right -->
 <button
-  class="self"
+  class="container"
   on:click={() => {
     currentView.set('gameSettings');
   }}>New</button
 >
 
 <style>
-  .self {
+  .container {
     grid-area: the-new-button;
     justify-self: end;
     font-size: 1.4vw;

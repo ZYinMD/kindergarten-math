@@ -2,12 +2,13 @@
   import { currentQuestionAnswer } from '../../questions/$progress';
 </script>
 
+<!-- @component the square box containing the number to be answered -->
 {#if isNaN($currentQuestionAnswer.value)}
-  <div class="self empty">{$currentQuestionAnswer.value || ''}</div>
+  <div class="box empty">{$currentQuestionAnswer.value || ''}</div>
 {:else if $currentQuestionAnswer.isCorrect}
-  <div class="self correct">{$currentQuestionAnswer.value || ''}</div>
+  <div class="box correct">{$currentQuestionAnswer.value || ''}</div>
 {:else}
-  <div class="self wrong">{$currentQuestionAnswer.value || ''}</div>
+  <div class="box wrong">{$currentQuestionAnswer.value || ''}</div>
 {/if}
 
 <style>
@@ -33,7 +34,7 @@
       transform: none;
     }
   }
-  .self {
+  .box {
     display: grid;
     place-items: center;
     font-size: 0.7em;

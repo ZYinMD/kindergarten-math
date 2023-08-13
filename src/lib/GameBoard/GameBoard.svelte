@@ -9,7 +9,7 @@
   import Hint from './Hint/Hint.svelte';
 </script>
 
-<div class="self">
+<div class="container">
   <Score />
   <TheNewButton />
 
@@ -25,7 +25,7 @@
 </div>
 
 <style>
-  .self {
+  .container {
     display: grid;
     padding-top: min(2vw, 1vh);
     grid:

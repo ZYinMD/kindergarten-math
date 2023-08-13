@@ -4,6 +4,7 @@
   import ScoreFlasher from './ScoreFlasher.svelte';
 </script>
 
+<!-- @component the score shown on the top left -->
 <div class="container">
   <div class="counter">Progress: {$correctCounter} / {$settings.numQuestions}</div>
   <ScoreFlasher />

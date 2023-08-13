@@ -28,6 +28,7 @@
   }
 </script>
 
+<!-- @component the question stem -->
 {#key $currentQuestion.question}
   <div class="self" in:rotateIn out:flyAway>
     {#if type === 'a+b=_'}

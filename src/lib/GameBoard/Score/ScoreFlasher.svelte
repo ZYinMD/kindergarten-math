@@ -17,6 +17,7 @@
 <script lang="ts">
 </script>
 
+<!-- @component the temporary "+1" "-1" after a question is answered -->
 {#if $scoreFlasher === 'plus'}
   <div class="self green" transition:scale>+1</div>
 {/if}
