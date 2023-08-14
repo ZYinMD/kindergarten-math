@@ -1,5 +1,7 @@
 #!/bin/bash
+set -e
 
+pnpm test
 pnpm check
 pnpm build
 firebase deploy

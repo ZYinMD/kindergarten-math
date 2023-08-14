@@ -5,10 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "test": "vitest",
+    "test": "vitest run",
     "build": "vite build",
-    "preview": "vite preview",
-    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "check": "svelte-check --fail-on-warnings --tsconfig ./tsconfig.json",
+    "preview": "pnpm check && pnpm build && vite preview",
     "version": "bash version.sh"
   },
   "devDependencies": {
