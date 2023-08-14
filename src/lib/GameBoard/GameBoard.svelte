@@ -22,6 +22,7 @@
     <AllAnswerButtons />
     <Hint />
   {/if}
+  <footer>Please rotate your phone to landscape mode</footer>
 </div>
 
 <style>
@@ -33,8 +34,20 @@
       'question question' min(14vw, 17vh)
       'answer-buttons answer-buttons' min(23vw, 44vh)
       'hint hint' min(14vw, 20vh)
+      'footer footer' 50px
       /
       auto auto;
     place-items: center;
+  }
+  footer {
+    grid-area: footer;
+    margin: 0 20px;
+    font-size: 20px;
+    text-align: center;
+  }
+  @media (min-width: 600px) {
+    footer {
+      display: none;
+    }
   }
 </style>
