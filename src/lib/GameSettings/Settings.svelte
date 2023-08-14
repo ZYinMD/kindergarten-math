@@ -10,6 +10,17 @@
 
 <div class="container">
   <section>
+    <button
+      on:click={() => {
+        questionUtil.newGame();
+        currentView.set('questions');
+      }}
+    >
+      Start Game!
+    </button>
+  </section>
+
+  <section>
     Involve no greater numbers than: {$settings.maxValueAllowed}
     <label>
       <input type="range" bind:value={$settings.maxValueAllowed} min="5" max="20" />
@@ -70,17 +81,6 @@
     </label>
   </section>
 
-  <section>
-    <button
-      on:click={() => {
-        questionUtil.newGame();
-        currentView.set('questions');
-      }}
-    >
-      Start!
-    </button>
-  </section>
-
   <section class="app-version">
     <!-- svelte-ignore missing-declaration -->
     app version: {__version__}
@@ -89,19 +89,40 @@
 
 <style>
   .container {
+    font-family: monospace;
     padding: 4vw;
-    font-size: 2vw;
+    font-size: 20px;
+  }
+  input {
+    transform: scale(1.5);
+    transform-origin: left;
   }
   button {
-    font-size: 1.5vw;
+    font-size: 20px;
   }
   section {
-    margin-bottom: 3.3vw;
+    margin-bottom: 30px;
   }
   .question-types {
-    margin: 0.5rem 0;
-    display: grid;
-    grid-template-columns: repeat(3, 13vw);
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .question-types label {
+    margin: 0 0 4px -1px;
+    letter-spacing: 4px;
+    width: fit-content;
+  }
+  .hint {
+    display: flex;
+    flex-direction: column;
+  }
+  .hint input {
+    margin: 11px 5px 0 0;
+  }
+  .hint label {
+    font-size: 18px;
+    width: fit-content;
   }
   .app-version {
     color: #ddd;
