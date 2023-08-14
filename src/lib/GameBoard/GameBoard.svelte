@@ -40,6 +40,7 @@
     place-items: center;
   }
   footer {
+    color: orange;
     grid-area: footer;
     margin: 0 20px;
     font-size: 20px;

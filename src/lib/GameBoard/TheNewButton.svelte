@@ -14,7 +14,7 @@
   .container {
     grid-area: the-new-button;
     justify-self: end;
-    font-size: 1.4vw;
+    font-size: 2vw;
     border: 1px solid #aaa;
     border-radius: 0.3vw;
     padding: 0.4vw 0.8vw 0.3vw;
