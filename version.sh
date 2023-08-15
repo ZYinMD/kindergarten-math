@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-pnpm test
+pnpm test run # `vitest` runs with watch, `vitest run` runs once
 pnpm check
 pnpm build
 firebase deploy
