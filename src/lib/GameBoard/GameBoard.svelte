@@ -22,7 +22,7 @@
     <AllAnswerButtons />
     <Hint />
   {/if}
-  <footer>Please rotate your phone to landscape mode</footer>
+  <footer class="warning">Please rotate your phone to landscape mode</footer>
 </div>
 
 <style>
@@ -39,7 +39,7 @@
       auto auto;
     place-items: center;
   }
-  footer {
+  footer.warning {
     color: orange;
     grid-area: footer;
     margin: 0 20px;
@@ -47,7 +47,7 @@
     text-align: center;
   }
   @media (min-width: 600px) {
-    footer {
+    footer.warning {
       display: none;
     }
   }
