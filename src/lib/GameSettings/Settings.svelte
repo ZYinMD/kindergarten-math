@@ -1,11 +1,8 @@
-<script context="module" lang="ts">
-  declare const __version__: string;
-</script>
-
 <script lang="ts">
   import { currentView } from '../../$app';
   import { questionUtil } from '../questions/$progress';
   import { defaultQuestionTypes, settings } from './$settings';
+  import Footer from './Footer.svelte';
 </script>
 
 <div class="container">
@@ -80,11 +77,7 @@
       Don't show
     </label>
   </section>
-
-  <section class="app-version">
-    <!-- svelte-ignore missing-declaration -->
-    app version: {__version__}
-  </section>
+  <Footer />
 </div>
 
 <style>
@@ -123,8 +116,5 @@
   .hint label {
     font-size: 18px;
     width: fit-content;
-  }
-  .app-version {
-    color: #ddd;
   }
 </style>
