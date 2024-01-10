@@ -7,7 +7,7 @@
   class="container"
   on:click={() => {
     currentView.set('gameSettings');
-  }}>New</button
+  }}>New Game</button
 >
 
 <style>
@@ -21,5 +21,6 @@
     color: #aaa;
     margin-right: 4vw;
     background-color: transparent;
+    cursor: pointer;
   }
 </style>
