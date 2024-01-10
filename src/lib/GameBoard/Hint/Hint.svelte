@@ -15,7 +15,12 @@
 
   {#if $settings.allowHint !== 'no'}
     <div class="button">
-      <button on:click={handleClickHintToggle}> Hint </button>
+      <button
+        on:click={handleClickHintToggle}
+        class:cursor-pointer={$settings.allowHint === 'onClick' && !$showingHint}
+      >
+        Hint
+      </button>
     </div>
   {/if}
 </div>
@@ -41,5 +46,8 @@
     padding: 0.4vw 0.8vw 0.3vw;
     color: #aaa;
     background-color: transparent;
+  }
+  button.cursor-pointer {
+    cursor: pointer;
   }
 </style>

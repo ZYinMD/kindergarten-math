@@ -90,6 +90,7 @@
     color: #0008;
     border: none;
     border-radius: var(--number-button-border-radius);
+    cursor: pointer;
   }
   /* make the numbers not selectable. This is an issue if it's pressed for too long on touch device */
   .the-number-itself {
