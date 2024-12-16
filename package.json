@@ -9,11 +9,13 @@
     "build": "vite build",
     "check": "svelte-check --fail-on-warnings --tsconfig ./tsconfig.json",
     "preview": "pnpm check && pnpm build && vite preview",
+    "deploy": "gh-pages -d dist",
     "version": "bash version.sh"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^2.0.4",
     "@tsconfig/svelte": "^4.0.1",
+    "gh-pages": "^6.2.0",
     "svelte": "^3.58.0",
     "svelte-check": "^3.2.0",
     "tslib": "^2.5.0",
