@@ -1,0 +1,15 @@
+{
+  "files.exclude": {
+    "somefile_that_I_want_to_hide": true,
+    "somefile_that_I_want_to_see": false,
+    ".firebase": true,
+    "**/node_modules": true
+  },
+  // note: search exclude inherit files exlude, unless you you override them.
+  "search.exclude": {
+    "somefile_that_I_dont_want_to_search": true,
+    "somefile_that_I_do_want_to_search": false,
+    "/dist": true,
+    "pnpm-lock.yaml": true
+  }
+}
