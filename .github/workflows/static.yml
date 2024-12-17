@@ -1,8 +1,11 @@
-# Simple workflow for deploying static content to GitHub Pages
+# instructions for Github Actions to deploy static site to GitHub Pages.
+
+# To find docs on how to do it, first go to github repo > settings > pages > Source > Github actions > Static HTML > Configure, it'll show you a template yaml. Then modify it by checking https://vite.dev/guide/static-deploy#github-pages or google "vite deploy static sites". Can also google "pnpm github actions" if encounter pnpm issues.
+
 name: Deploy static content to Pages
 
 on:
-  # Runs on pushes targeting the default branch
+  # Runs on push to main branch
   push:
     branches: ['main']
 
@@ -22,7 +25,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Single deploy job since we're just deploying
+  # only one job, deploy
   deploy:
     environment:
       name: github-pages
@@ -39,9 +42,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm'
+          cache: 'pnpm' # I did this by trial and error, not knowing what it does
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --frozen-lockfile # just "pnpm install" is also fine. I think --frozen-lockfile ensures strick versions per lockfile.
       - name: Build
         run: pnpm run build
       - name: Setup Pages
@@ -49,8 +52,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload dist folder
-          path: './dist'
+          path: './dist' # upload dist folder
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
