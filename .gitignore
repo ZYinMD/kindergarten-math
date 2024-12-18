@@ -1,6 +1,3 @@
-# this folder seem to contain some cache files
-/.firebase
-
 # this seems to randomly appear
 /vite.config.ts.timestamp*.mjs
 

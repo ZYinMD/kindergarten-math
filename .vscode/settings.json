@@ -2,7 +2,6 @@
   "files.exclude": {
     "somefile_that_I_want_to_hide": true,
     "somefile_that_I_want_to_see": false,
-    ".firebase": true,
     "**/node_modules": true
   },
   // note: search exclude inherit files exlude, unless you you override them.
